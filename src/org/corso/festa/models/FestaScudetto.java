@@ -6,12 +6,24 @@ import org.corso.festa.exceptions.TifosoDiUnaSquadraDiversaException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * FestaScudetto contiene (HAS A):
+ *  - Invitati: elenco tifosi accettati
+ *  - Festa: dati della festa
+ *  - Squadra: squadra oggetto della festa
+ *
+ *  FIXME RM : non é verificato se la festa passata come parametro é null nel costruttore
+ *  FIXME RM : non é verificato se la squadra passata come parametro é null nel costruttore
+ */
 public class FestaScudetto {
 
     private List<Tifoso> invitati;
     private Festa festa;
     private Squadra squadra;
 
+    /**
+     * Deve per lo meno essere creato l'array degli invitati
+     */
     public FestaScudetto() {
         invitati = new ArrayList<>();
     }
@@ -24,6 +36,15 @@ public class FestaScudetto {
     }
 
 
+    /**
+     * Aggiunge il tifoso all'elenco degli invitati solo se
+     *  - tifa la stessa squadra di cui é oggetto la festa e
+     *  - non é superata la capacitá massima della festa
+     *
+     * @param tifoso
+     * @throws TifosoDiUnaSquadraDiversaException
+     * @throws SuperatoMassimoNrMaxInvitati
+     */
     public void aggiungiTifoso(Tifoso tifoso) throws TifosoDiUnaSquadraDiversaException, SuperatoMassimoNrMaxInvitati {
         if (invitati.size()>=festa.getNrMaxInviti())
             throw new SuperatoMassimoNrMaxInvitati();

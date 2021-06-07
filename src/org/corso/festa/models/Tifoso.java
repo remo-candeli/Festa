@@ -1,8 +1,13 @@
 package org.corso.festa.models;
 
+
+/**
+ * Tifoso estende persona perché Tifoso 'IS A' Persona (Tifoso é una persona)
+ * FIXME RM : non é verificato se la squadra passata come parametro é null nel costruttore
+ */
 public class Tifoso extends Persona {
 
-    private Squadra squadra;
+    private Squadra squadra;  // in piú il tifoso, tifa almeno una squadra.
 
     public Tifoso(String nome, String cognome, Genere genere, int eta, Squadra squadra) {
         super(nome, cognome, genere, eta);

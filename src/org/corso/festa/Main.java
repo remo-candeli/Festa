@@ -15,9 +15,13 @@ public class Main {
         Festa festa = new Festa("Via delle vie", "Latina", 5);
         FestaScudetto festaScudetto = new FestaScudetto(festa, Squadra.FIORENTINA);
 
+        // genera l'elenco dei tifosi
         creaTifosi(tifosi);
 
+        // esegue il tentativo di aggiunta dei tifosi  alla festa
         esecuzione(festaScudetto, tifosi);
+
+        // esegue i reports
         festaScudetto.stampaPartecipantiPerGenere(Genere.MASCHIO);
         festaScudetto.stampaPartecipantiPerGenere(Genere.FEMMINA);
     }
