@@ -12,6 +12,12 @@ import java.util.List;
  *  - Festa: dati della festa
  *  - Squadra: squadra oggetto della festa
  *
+ *  Nota:
+ *  L'elenco degli invitati si poteva anche spostarlo nella classe Festa.
+ *  Ma avrei dovuto utilizzare i generics bounded type. Richiedono una conoscenza
+ *  ulteriore dei generics.
+ *  private List<T extends Persona> invitati;
+ *
  *  FIXME RM : non é verificato se la festa passata come parametro é null nel costruttore
  *  FIXME RM : non é verificato se la squadra passata come parametro é null nel costruttore
  */
